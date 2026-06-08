@@ -1,0 +1,36 @@
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: black;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  color: white;
+}
+
+.overlay h1 {
+  font-size: 5rem;
+  margin: 0;
+}
+
+.overlay p {
+  font-size: 1.4rem;
+}
