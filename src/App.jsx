@@ -6,7 +6,8 @@ export default function App() {
       <HeroScene />
 
       <div className="overlay">
-        <h1>Luxury AI Watch</h1>
+        <h1>Luxury Wrist</h1>
+        <h1>SmartWatch</h1>
         <p>Powered by Intelligence</p>
       </div>
     </div>
