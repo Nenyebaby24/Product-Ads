@@ -1,15 +1,38 @@
 import HeroScene from "./components/HeroScene";
+import VoicePlayer from "./components/VoicePlayer";
+import Subtitles from "./components/Subtitles";
+import FeatureCards from "./components/FeatureCards";
+
+import { adScript } from "./ai/adScript";
 
 export default function App() {
   return (
-    <div className="container">
+    <>
+      <VoicePlayer />
+
       <HeroScene />
 
+      <Subtitles />
+
       <div className="overlay">
-        <h1>Luxury Wrist</h1>
-        <h1>SmartWatch</h1>
-        <p>Powered by Intelligence</p>
+        <div className="badge">
+          SMARTWATCH 
+        </div>
+
+        <h1>
+          {adScript[0]} <br />
+        </h1>
+
+        <p>
+          {adScript[1]}
+        </p>
+
+        <button>
+          Discover More
+        </button>
       </div>
-    </div>
+
+      <FeatureCards />
+    </>
   );
 }

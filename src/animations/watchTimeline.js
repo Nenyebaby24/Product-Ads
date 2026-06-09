@@ -1,8 +1,8 @@
 import gsap from "gsap";
 
-export const playWatchAd = (
+export function createWatchTimeline(
   watchRef
-) => {
+) {
   const tl = gsap.timeline();
 
   tl.from(
@@ -11,7 +11,8 @@ export const playWatchAd = (
       x: 0,
       y: 0,
       z: 0,
-      duration: 1.5,
+      duration: 2,
+      ease: "power3.out",
     }
   );
 
@@ -19,9 +20,21 @@ export const playWatchAd = (
     watchRef.current.rotation,
     {
       y: Math.PI * 2,
-      duration: 3,
+      duration: 5,
+      ease: "none",
+    }
+  );
+
+  tl.to(
+    watchRef.current.position,
+    {
+      y: 0.3,
+      duration: 2,
+      yoyo: true,
+      repeat: -1,
+      ease: "sine.inOut",
     }
   );
 
   return tl;
-};
+}
