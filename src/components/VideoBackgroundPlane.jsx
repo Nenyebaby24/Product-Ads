@@ -11,9 +11,6 @@ export default function VideoBackgroundPlane() {
     video.src =
       "/videos/ai-city-background.mp4";
 
-    video.crossOrigin =
-      "anonymous";
-
     video.loop = true;
     video.muted = true;
     video.playsInline = true;
@@ -28,24 +25,27 @@ export default function VideoBackgroundPlane() {
     texture.colorSpace =
       THREE.SRGBColorSpace;
 
-    if (
-      meshRef.current
-    ) {
+    if (meshRef.current) {
       meshRef.current.material.map =
         texture;
+
+      meshRef.current.material.needsUpdate =
+        true;
     }
   }, []);
 
   return (
     <mesh
       ref={meshRef}
-      position={[0, 0, -20]}
+      position={[0, 0, -8]}
     >
       <planeGeometry
-        args={[60, 34]}
+        args={[80, 45]}
       />
 
-      <meshBasicMaterial />
+      <meshBasicMaterial
+        toneMapped={false}
+      />
     </mesh>
   );
 }
