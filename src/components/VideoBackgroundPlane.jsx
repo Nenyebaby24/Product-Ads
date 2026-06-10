@@ -37,14 +37,16 @@ export default function VideoBackgroundPlane() {
   return (
     <mesh
       ref={meshRef}
-      position={[0, 0, -8]}
+      position={[0, 0, -12]}
     >
       <planeGeometry
-        args={[80, 45]}
+        args={[20, 12]}
       />
 
       <meshBasicMaterial
         toneMapped={false}
+        transparent
+        opacity={0.25}
       />
     </mesh>
   );
